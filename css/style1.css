@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round&family=Roboto+Slab&display=swap");
+
+:root {
+	--firstcolor: #21aba5;
+	--seccolor: #1d566e;
+	--thirdcolor: #163a5f;
+
+	--primaryfont: "Roboto Slab", serif;
+	--secondaryfont: "Crete Round", serif;
+}
+
+.container{
+	width: 100%;
+	height: 1150px;
+	font-family: var(--secondaryfont);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container .img img{
+	width: 100%;
+	height: 100vh;
+}
+
+.container .head p{
+	font-size: 40px;
+	
+}
+
+
+.container a{
+	text-decoration: none;
+	color: #fff;
+	background-color: var(--firstcolor);
+	font-size: 22px;
+
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.container .content p{
+
+	width: 800px;
+	height: 800px;
+	font-size: 20px;
+
+
+	text-align: justify;
+	margin-top: 50px;
+
+
+
+
+}
