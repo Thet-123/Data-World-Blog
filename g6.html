@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>General 6</title>
+	<link rel="stylesheet" href="css/style1.css"/>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="img">
+			<img src="img/g6.jpg" alt="g1logical"/>
+		</div>
+		<div class="head">
+			<p>API Keys, JWT, OAuth</p>
+		</div>
+		<div>
+			<a href="blog.html">
+				Category : General
+			</a>
+		</div>
+		<div class="content">
+			<p>API developments တွေနဲ့အတူ API resources တွေကိုကာကွယ်နိုင်ဖို့အတွက် authentication, authorization mechanisms တွေအမျိုးမျိုးသုံးကြပါတယ်။ ဒီနေ့ကျနော်အသုံးများတဲ့ mechanism တစ်ချို့အကြောင်းကိုရေးသွားမှာဖြစ်ပါတယ်။<br/><br/><br/>
+
+
+API Keys<br/><br/>
+အရင်တုန်းကအခုလို သုံးစရာ options တွေများများစားစားမရှိခင်အချိန်က API keys တွေကိုပဲအားကိုးခဲ့ကြရပါတယ်။ API key ရဲ့ကောင်းတဲ့အချက်ကတော့ ရိုးရိုးရှင်းရှင်းနဲ့အသုံးပြုနိုင်တာပါပဲ။ ကိုယ်သုံးနေတဲ့ services တွေထဲကိုပုံမှန်အတိုင်း login ဝင်ပြီးတာနဲ့ API key ကိုရှာလို့ရပါတယ်။ များသောအားဖြင့် API key ပေးထားတဲ့ service တွေဆို setting option တစ်ခုခုထဲဝင်ပြီးတော့ API key ကိုရှာနိုင်ပါတယ်။ API key ရပြီဆို user/developer က အဲ့ဒီ service နဲ့ပတ်သတ်တဲ့ API resources တွေကို ရထားတဲ့ API key ကိုသုံးပြီးတော့ access လုပ်နိုင်သွားမှာဖြစ်ပါတယ်။ သုံးရတာလွယ်ကူတာနဲ့အတူ မကောင်းတဲ့အချက်တွေလည်းတွဲပါလာပါတယ်။ ဒါကတော့ API key ရဲ့ API resources တွေအပေါ် access လုပ်မှုကိုကန့်သတ်မထားပဲ အားလုံးကို access လုပ်ခွင့်ပြုထားမယ်ဆိုရင် API key ရထားတဲ့ user နဲ့မသက်ဆိုင်တဲ့ အရေးကြီးတဲ့ API resources တွေကို user က read, write operations တွေလုပ်သွားမယ်ဆို အခက်တွေ့နိုင်ပါတယ်။ နောက်တစ်ချက်ကတော့ API key ကတစ်ခြားမသက်ဆိုင်တဲ့သူတစ်ယောက်ယောက်ရသွားခဲ့မယ်ဆိုရင်လည်း API တွေ access လုပ်နိုင်မှာဖြစ်တဲ့အတွက် မလိုအပ်တဲ့ပြသနာတွေဖြစ်လာနိုင်ပါတယ်။ 
+<br/><br/><br/>
+ 
+
+JWT<br/><br/>
+JWT နဲ့ပတ်သတ်ပြီးတော့ ကျနော်အရှေ့မှာလည်း articles နှစ်ခုရေးဖူးခဲ့ပါတယ်၊ comment မှာ link တွေထည့်ထားပေးပါတယ်။ JWT tokens တွေက DB ထဲမှာ save လုပ်ထားစရာမလိုတဲ့အတွက် token validation လုပ်တဲ့နေရာမှာ DB lookups တွေလုပ်စရာမလိုတော့ပါဘူး။ Users ကပို့ပေးလိုက်တဲ့ data တွေနဲ့အတူ sever ဘက်က secret key ကို sign လုပ်ပြီး encoded string ကို token အဖြစ်ပြန်ပေးတယ်၊ users ဘက်က request ပြန်ဝင်လာရင်လည်း decode လုပ်ပြီး sign verification လုပ်တယ်။ token တွေ validate လုပ်တဲ့နေရာမှာ API key ထက်စာရင် JWT ရဲ့ calculation ကပိုကောင်းတယ်လို့ဆိုလို့ရပါတယ်။ JWT ရဲ့ အားနည်းချက်တွေကတော့ အရင် articles တွေမှာပြောခဲ့တဲ့အတိုင်း လိုသလိုတန်းပြီး token တွေကို revoke လုပ်လို့မရတာရယ်၊ token expiration အတွက်လည်းအလုပ်ပိုပိစေတာရယ်ပါပဲ။ ပြောရမယ်ဆိုရင်တော့ trade off ပဲ၊ JWT ဆိုရင် DB lookup တွေမလိုဘူး၊ calculation ပိုကောင်းတယ်။ ဒါပေမယ့် DB ထဲမှာသိမ်းတဲ့ API keys တွေလိုမျိုးတော့ revoke , expire စတာတွေကိုလိုချင်သလိုလုပ်ဖို့ခဲယဉ်းသွားလိမ့်မယ်။ JWT articles တွေမဖတ်ရသေးဘူးဆို comment မှာပေးထားတဲ့ link တွေကနေတစ်ဆင့်သွားဖတ်ဖို့အကြံပေးပါတယ်။ ဒီမှာကအကျဉ်းချုံးပဲရေးထားတာမို့ပါ။ 
+<br/><br/><br/>
+ 
+
+OAuth<br/><br/>
+OAuth အတွက်အချိန်ရရင်သီးသန့် article တစ်ခုထပ်ရေးပေးသွားပါမယ်။ ဒီ article မှာတော့နားလည်ရလွယ်အောင်အရင်ပြောထားပါမယ်။ Oauth က user ကနေ authentication တွေ သီးသန့် ထပ်မံလုပ်ပေးစရာမလိုဘဲ service တစ်ခုနဲ့တစ်ခုကြားမှာ data တွေဆက်သွယ်ပေးယူနိုင်အောင်လုပ်ပေးပါတယ်။ ဥပမာ game တစ်ခုဆော့မယ်ဆိုရင် login လုပ်ဖို့အတွက် username , password , email စတာတွေထည့်ပြီး account ဆောက်ပြီး သီးသန့် login လုပ်နေစရာမလိုတော့ဘဲ Gmail Login , Facebook Login ဆိုတဲ့အရာတွေကို သုံးလိုက်မယ်ဆိုရင် သက်ဆိုင်တဲ့ service ကနေမှတစ်ဆင့် ဒီ game ကတော့ ကိုယ့်ရဲ့ name , email စတာတွေတောင်းနေတယ်၊ ပေးလိုက်ရမလားဆိုတဲ့ပုံစံနဲ့ alert တတ်လာပြီး allow လုပ်လိုက်မယ်ဆိုတာနဲ့အလွယ်တကူအသုံးပြုနိုင်သွားမှာပဲဖြစ်ပါတယ်။ FB မှာပေါ်လာတဲ့ third party game တွေဆော့ဖူးတယ်ဆို ဒီလို alert တွေခနခနမြင်ဖူးမယ်လို့ထင်ပါတယ်။ Oauth ကလည်း access_token နဲ့သွားတဲ့အတွက်ကြောင့် access_token ပေါက်သွားရင် အခက်တွေ့နိုင်ပေမယ့် JWT လိုမဟုတ်ဘဲ token ကို expire လုပ်နိုင်တဲ့ refresh_token လိုမျိုးတွေပါတယ်။ နောက်ပြီးတော့ token ကို revoke လုပ်ရလည်းပိုလွယ်ပါတယ်။ နောက်ထပ်ကောင်းတဲ့အချက်က access_token မှာ scope permission တွေသတ်မှတ်ပေးလိုက်လို့ရပါတယ်၊ ဒီ token ကတော့ ဒီ API resources ကိုပဲ access လုပ်ခွင့်ရှိတယ်၊ ဒီဟာတွေဆိုမရဘူးစသည်ဖြင့်သတ်မှတ်လိုက်လို့ရပါတယ်။
+<br/><br/><br/>
+ 
+
+Conclude လုပ်ရမှာဆိုရင်<br/><br/>
+
+ရိုးရိုးရှင်းရှင်းနဲ့ security ကိုလည်းသာမန်လောက်ပဲလိုအပ်တယ်၊ ဒါမှမဟုတ် internal software တွေမှာပဲပြန်သုံးဖို့ဆို API keys တွေသုံးနိုင်ပါတယ်။
+DB lookups တွေမလုပ်ချင်ဘူး၊ token revoke လည်းသိပ်မလိုဘူး၊ ပိုကောင်းတဲ့ token verfication ပုံစံလည်းလိုချင်တယ်ဆို JWT ကိုသုံးနိုင်ပါတယ်။
+Service တစ်ခုနဲ့တစ်ခုကြားချိတ်ဆက်တဲ့နေရာမှာ user ကို အလုပ်မပိုစေချင်ဘူး (အလွယ်တကူ authorize လုပ်နိုင်မယ်)။ tokens တွေကိုလည်းပိုပြီး manage လုပ်ရလွယ်ချင်တယ်ဆိုရင်တော့ OAuth ကိုသုံးနိုင်ပါတယ်။</p>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>General 3</title>
+	<link rel="stylesheet" href="css/style1.css"/>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="img">
+			<img src="img/g3.jpg" alt="g1logical"/>
+		</div>
+		<div class="head">
+			<p>Local Stroage, a bad idea?</p>
+		</div>
+		<div>
+			<a href="blog.html">
+				Category : General
+			</a>
+		</div>
+		<div class="content">
+			<p>Local storage ရဲ့သဘောတရားကတော့ အားလုံးသိထားပြီးလောက်လို့ယူဆတဲ့အတွက် အသေးစိတ်မရှင်းပြတော့ပါဘူး။  JavaScript ကိုသုံးပြီးတော့ Browser ထဲမှာယာယီ information တွေသိမ်းနိုင်တဲ့ feature တစ်ခုလို့ဆိုနိုင်ပါတယ်။ Local storage ကိုသုံးတာကောင်းလား၊ မကောင်းဘူးလား ဘာကြောင့် မကောင်းတာလဲစတဲ့ အချက်တွေကို ရေးသွားမှာဖြစ်ပါတယ်။ <br/><br/><br/>
+
+ 
+
+Local storage ကိုသုံးခြင်းအားဖြင့် data သိမ်းရတာလွယ်ကူတယ်၊ JS code နည်းနည်းရေးလိုက်ရုံပဲ။ cookie တွေထက်လည်းသုံးရပိုလွယ်တယ်၊ ဘာကြောင့်လဲဆိုတော့ cookie နဲ့သိမ်းဖို့ဆို web server လိုအပ်လာပြီ၊ ဒါကြောင့် Backend language တစ်ခုခုလည်းမဖြစ်မနေလိုအပ်လာမယ်။ Local storage ကတော့ဒါတွေမလိုအပ်ဘူး။ <br/><br/><br/>
+
+ 
+
+နောက်တစ်ချက်ကတော့ storage size က cookie ထက်စာရင်ပိုရတယ်။ cookie က max storage 4K လောက်ပဲရတဲ့အချိန်မှာ Local storage က 5MB ထိရတယ်။ သုံးရတာလွယ်တယ်၊ size များများရတယ် ဆိုတဲ့အချက်တွေကြောင့် စိတ်ဝင်စားဖို့ကောင်းပါတယ်။<br/><br/><br/>
+
+ 
+
+သို့ပေမယ့် Local storage က ကောင်းတဲ့အချက်တွေထက် drawbacks(တန်ပြန်မကောင်းတဲ့အချက်တွေ) က ပိုများနေတယ်လို့ပြောနိုင်ပါတယ်။<br/><br/><br/>
+
+ 
+
+5MB ထိသိမ်းနိုင်တယ်ဆိုပေမယ့် string type သီးသန့်ပဲသိမ်းနိုင်တယ်။ data တွေကို serialize လုပ်ပြီးသိမ်းနိုင်ပေမယ့်လို့ string သီးသန့်ပဲရတာကတော့ မကောင်းဘူး။ Async မဟုတ်ဘဲ synchronous ပုံစံနဲ့ပဲအလုပ်လုပ်ပါတယ်၊ ဆိုလိုချင်တာက performance အတွက်မကောင်းဘူး၊ background processing jobs တွေ workers လိုမျိုးတွေအတွက်ဆို အဆင်မပြေနိုင်ပါဘူး။<br/><br/><br/>
+
+ 
+
+ဒီထိတော့ ကောင်းတဲ့အချက်၊ မကောင်းတဲ့အချက်တွေက balance ဖြစ်နေသေးတယ်မြင်နိုင်ပါတယ်။ storage ကလည်း 5MB ထက်မကျော်ဘူး၊ high performance လည်းဖြစ်စရာမလိုဘူး၊ နည်းနည်းနှေးလည်းအဆင်ပြေတယ်၊ sensitive ဖြစ်တဲ့ information တွေလည်း (user information, credit card number, phone number etc.) သိမ်းစရာမလိုဘူးဆိုရင်တော့ local storage ကိုသုံးနေနိုင်ပါသေးတယ်။ ဒါပေမယ့် drawbacks တွေကဒီထက်ပိုပြီးရှိနေသေးတယ်။
+<br/><br/><br/>
+ 
+
+ကျနော် အပေါ်မှာ sensitive ဖြစ်တဲ့ information တွေလို့ပြောသွားတယ်၊ sensitive ဖြစ်တဲ့ information တွေသိမ်းလို့မရလို့လား၊ Technically သိမ်းလို့တော့ရတယ်၊ ဒါပေမယ့် secure ဖြစ်မှာမဟုတ်ဘူး။ ဘာကြောင့်လဲဆိုတော့ local storage ကိုယ်တိုင်ကိုက secure storage mechanism မဟုတ်ဘူး။ ပုံမှန်ပေါ့ပေါ့ပါးပါး key value pair လောက်ပဲသုံးဖို့အတွက် လုပ်ထားတဲ့ alternative storage ပုံစံတစ်မျိုးပါပဲ။<br/><br/><br/>
+
+ 
+
+နောက်တစ်ခုကတော့ JavaScript ကိုသုံးပြီးတော့(XSS attack) browser ထဲမှာရှိတဲ့ storage values တွေကိုလှမ်းပြီးတော့ access လုပ်နိုင်ခြေ possibilities အများကြီးရှိနေတဲ့အတွက် လုံခြုံမှုအားဖြင့်လည်း အတော်လေးနည်းသွားမှာဖြစ်ပါတယ်။ နောက်တစ်ခုကတော့ API tokens တွေ JWT tokens တွေလိုမျိုးကိုလည်း Local storage ထဲမှာမသိမ်းမိဖို့လိုပါတယ်။ အပေါ်ကအချက်တွေနည်းတူ token ပေါက်သွားနိုင်တဲ့အတွက်ဖြစ်ပါတယ်။ tokens တွေနဲ့ပတ်သတ်ပြီးတော့ ပြီးခဲ့တဲ့အပတ်က articles တွေကိုပြန်လည်ဖတ်ရှုနိုင်ပါတယ်။
+<br/><br/><br/>
+ 
+
+ဟုတ်ပြီ၊ local storage ကမကောင်းဘူးဆိုတော့ alternative storage အဖြစ်တစ်ခြားဘာတွေသုံးနိုင်မလဲ။<br/><br/><br/>
+
+ 
+
+တော်တော်များများသုံးနေကျဖြစ်တဲ့ sessionID ဖန်တီးပြီး cookie ထဲမှာထည့်သုံးပြီးတော့လည်း sensitive information တွေကိုသိမ်းဆည်းနိုင်ပါတယ်။ Login system တော်တော်များများကိုလည်း session ID နဲ့ဖန်တီးထားတာတွေကိုတွေ့နိုင်ပါတယ်။ session ID login နဲ့ပတ်သတ်ပြီးတော့ ထပ်ဖတ်နိုင်ဖို့ comment မှာလင့်ခ်ထည့်ပေးထားပါတယ်။ ယေဘုယျသဘောတရားကတော့ cookie ထဲက session ID ကိုလှမ်းထုတ်ယူပြီး တစ်ခြား secure storage ထဲမှာသိမ်းထားတဲ့ sensitive data တွေကိုလှမ်း access လုပ်တာဖြစ်ပါတယ်။
+<br/><br/><br/>
+ 
+
+Cookie ကိုသုံးပြီဆိုတာနဲ့တစ်ပြိုင်နက် ဒီအချက်တွေကိုဂရုစိုက်ရပါမယ်။ 
+-    httpOnly flag (for client side’s scriptings)
+-    SameSite=strict (for CSRF attacks)
+-    secure=true (making sure cookies are communicating through secure connection)<br/><br/><br/>
+
+ 
+
+နောက်တစ်မျိုးကတော့ Indexed DB ကိုသုံးတာ, data ပိုများများသိမ်းချင်တယ်၊ သိမ်းထားတဲ့ data တွေကိုပိုပြီးတော့ စီမံရလွယ်ကူချင်တယ်ဆိုသုံးနိုင်ပါတယ်။ JavaScript object-oriented database လို့လည်းဆိုပါတယ်။ sensitive data တွေအတွက်အကောင်းဆုံးလို့ပြောလို့မရပေမယ့် local storage ထက်တော့အများကြီးပိုကောင်းပါတယ်။ Syn ရော Async ရောရမယ် စသည်ဖြင့်အများကြီးပိုကောင်းတဲ့အချက်တွေရှိပါတယ်။ အသေးစိတ်ကို mozilla org မှာသွားဖတ်ကြည့်နိုင်ပါတယ်။<br/><br/><br/>
+
+ 
+
+ဒီ article ထဲမှာပါတဲ့ တစ်ခြားသော ဆိုင်ရာ articles တွေကိုလည်း comment မှာလင့်ခ်တွေဖြည့်ပေးထားပါတယ်။</p>
+		</div>
+	</div>
+
+</body>
+</html>
